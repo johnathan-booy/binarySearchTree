@@ -1,3 +1,5 @@
+const Queue = require("./queue");
+
 class Node {
 	constructor(val, left = null, right = null) {
 		this.val = val;
@@ -147,7 +149,21 @@ class BinarySearchTree {
 	/** bfs(): Traverse the array using BFS.
 	 * Return an array of visited nodes. */
 
-	bfs() {}
+	bfs() {
+		const arr = [];
+		const queue = new Queue();
+		queue.enqueue(this.root);
+		while (queue.size > 0) {
+			const currentNode = queue.dequeue();
+			if (currentNode !== null) {
+				arr.push(currentNode.val);
+				queue.enqueue(currentNode.left);
+				queue.enqueue(currentNode.right);
+			}
+		}
+
+		return arr;
+	}
 
 	/** Further Study!
 	 * remove(val): Removes a node in the BST with the value val.

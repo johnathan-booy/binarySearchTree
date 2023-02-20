@@ -1,26 +1,22 @@
 const BinarySearchTree = require("./binary-search-tree");
 
-// describe("insert", function() {
-//   it("inserts a node at the correct position", function() {
-//     var binarySearchTree = new BinarySearchTree();
-//     binarySearchTree
-//       .insert(15)
-//       .insert(20)
-//       .insert(10)
-//       .insert(12);
-//     expect(binarySearchTree.root.val).toEqual(15);
-//     expect(binarySearchTree.root.right.val).toEqual(20);
-//     expect(binarySearchTree.root.left.right.val).toEqual(12);
-//   });
+describe("insert", function () {
+	it("inserts a node at the correct position", function () {
+		var binarySearchTree = new BinarySearchTree();
+		binarySearchTree.insert(15).insert(20).insert(10).insert(12);
+		expect(binarySearchTree.root.val).toEqual(15);
+		expect(binarySearchTree.root.right.val).toEqual(20);
+		expect(binarySearchTree.root.left.right.val).toEqual(12);
+	});
 
-//   it("inserts a node at the root if there is nothing there", function() {
-//     var binarySearchTree = new BinarySearchTree();
-//     binarySearchTree.insert(15);
-//     expect(binarySearchTree.root.val).toEqual(15);
-//     expect(binarySearchTree.root.left).toBe(null);
-//     expect(binarySearchTree.root.right).toBe(null);
-//   });
-// });
+	it("inserts a node at the root if there is nothing there", function () {
+		var binarySearchTree = new BinarySearchTree();
+		binarySearchTree.insert(15);
+		expect(binarySearchTree.root.val).toEqual(15);
+		expect(binarySearchTree.root.left).toBe(null);
+		expect(binarySearchTree.root.right).toBe(null);
+	});
+});
 
 // describe("insertRecursively", function() {
 //   it("inserts a node at the correct position", function() {
